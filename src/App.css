@@ -1,38 +1,146 @@
 .App {
-  text-align: center;
+  color: #fff;
+  background-color: rgb(26, 26, 49);
+  font-family: 'Rubik', sans-serif;
+  height: 100vh;
+  position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.dashboard {
+  display: flex;
+  flex-direction: row;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.card-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.card-container {
+  border: 0;
+  border-radius: 10px;
+  height: min-content;
+  overflow: hidden;
+  position: relative;
+  width: 30%;
+}
+
+.card-container > img {
+  position: absolute;
+  right: 7.5%;
+  top: -3.5%;
+  width: 30%;
+  z-index: 0;
+}
+
+.card {
+  background-color: hsl(235, 46%, 20%);
+  border: 0;
+  border-radius: 10px;
+  bottom: 0;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  left: 0;
+  margin-top: 21.5px;
+  padding: 20px;
+  position: relative;
+  transition: all 0.35s;
+  z-index: 1;
 }
 
-.App-link {
-  color: #61dafb;
+.card:hover {
+  background-color: hsl(236, 32%, 33%);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card .activity-name {
+  font-size: 14px;
+}
+
+.card .current-duration {
+  padding: 10px 0 5px;
+  font-size: 30px;
+  font-weight: 300;
+}
+
+.card .timeframe {
+  color: hsl(236, 100%, 87%);
+  font-size: 10px;
+}
+
+
+.card-container .ellipsis {
+  cursor: pointer;
+  position: absolute;
+  right: 10%;
+  top: 24%; /* wrong */
+  width: 10%;
+  transition: filter 0.5s;
+}
+
+.card-container .ellipsis:hover {
+  color: #fff;
+  filter: brightness(200%);
+}
+
+.profile-picture {
+  border: 2px solid #fff;
+  border-radius: 100%;
+  width: 40%;
+}
+
+.profile-container {
+  background-color: hsl(246, 80%, 60%);
+  border-radius: 10px;
+  box-sizing: border-box;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.user-card {
+  border-radius: 10px;
+  background-color: hsl(235, 46%, 20%);
+  width: 10%;
+}
+
+.user-card ul li {
+  color: hsl(235, 45%, 61%);
+  list-style: none;
+  margin: 5px 0;
+}
+
+.user-card ul {
+  padding: 0 20px;
+}
+
+.user-card ul li button {
+  background-color: inherit;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  font-size: 10px;
+  padding: 0;
+  margin: 0;
+  transition: color 0.35s;
+}
+
+.user-card ul li button:hover {
+  color: #fff;
+}
+
+.profile-container .report {
+  color: hsl(236, 100%, 87%);
+  font-size: 10px;
+  margin-top: 20px;
+}
+
+.profile-container .user-name {
+  font-weight: 300;
+  font-size: 20px;
+  width: min-content;
 }

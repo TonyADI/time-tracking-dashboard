@@ -1,23 +1,40 @@
-import logo from './logo.svg';
+import { useState, useEffect} from 'react';
+import Card from './components/Card';
+import UserCard from './components/UserCard';
+import ellipsis from './images/icon-ellipsis.svg';
+import profilePicture from './images/image-jeremy.png';
+import data from './utils/data.json';
 import './App.css';
 
-function App() {
+const App = () => {
+  const [time, setTime] = useState('weekly');
+  const [activities, setActivites] = useState([...data]);
+  console.log(data)
+
+  useEffect(() => {
+    //setActivites([...data]);
+  }, [])
+
+  useEffect(() => {
+
+  }, [time]);
+
+  const handleClick = value => {
+    setTime(value);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="dashboard">
+        <UserCard profilePicture={profilePicture} 
+        handleClick={handleClick}/>
+        <div className="card-list">
+          {activities ? activities.map(activity => {
+            return <Card activity={activity} ellipsis={ellipsis}
+            time={time} key={activity.title}/>
+          }) : <div>We encoutered a problem.</div>}
+          </div>
+      </div>
     </div>
   );
 }

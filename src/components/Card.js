@@ -30,7 +30,7 @@ const Card = props => {
         default:
             imgSrc = work;
     }
-    console.log(props.activity)
+    
     return (
         <div className="card-container"
         style={{backgroundColor: props.activity.color}}>

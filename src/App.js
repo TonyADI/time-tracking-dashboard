@@ -1,4 +1,4 @@
-import { useState, useEffect} from 'react';
+import { useState } from 'react';
 import Card from './components/Card';
 import UserCard from './components/UserCard';
 import ellipsis from './images/icon-ellipsis.svg';
@@ -8,16 +8,6 @@ import './App.css';
 
 const App = () => {
   const [time, setTime] = useState('weekly');
-  const [activities, setActivites] = useState([...data]);
-  console.log(data)
-
-  useEffect(() => {
-    //setActivites([...data]);
-  }, [])
-
-  useEffect(() => {
-
-  }, [time]);
 
   const handleClick = value => {
     setTime(value);
@@ -27,9 +17,9 @@ const App = () => {
     <div className="App">
       <div className="dashboard">
         <UserCard profilePicture={profilePicture} 
-        handleClick={handleClick}/>
+        handleClick={handleClick} time={time}/>
         <div className="card-list">
-          {activities ? activities.map(activity => {
+          {data ? data.map(activity => {
             return <Card activity={activity} ellipsis={ellipsis}
             time={time} key={activity.title}/>
           }) : <div>We encoutered a problem.</div>}

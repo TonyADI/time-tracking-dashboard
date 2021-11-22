@@ -13,11 +13,14 @@ const UserCard = props => {
             </div>
             <ul>
                 <li><button value="daily"
-                onClick={handleClick}>Daily</button></li>
+                onClick={handleClick}
+                style={{color: props.time === 'daily' && '#fff'}}>Daily</button></li>
                 <li><button value="weekly"
-                onClick={handleClick}>Weekly</button></li>
+                onClick={handleClick}
+                style={{color: props.time === 'weekly' && '#fff'}}>Weekly</button></li>
                 <li><button value="monthly"
-                onClick={handleClick}>Monthly</button></li>
+                onClick={handleClick}
+                style={{color: props.time === 'monthly' && '#fff'}}>Monthly</button></li>
             </ul>
         </div>
     );

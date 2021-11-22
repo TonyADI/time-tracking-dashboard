@@ -93,6 +93,11 @@
   filter: brightness(200%);
 }
 
+.duration-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .profile-picture {
   border: 2px solid #fff;
   border-radius: 100%;
@@ -146,8 +151,68 @@
   margin-top: 20px;
 }
 
+.profile-container .report-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .profile-container .user-name {
   font-weight: 300;
   font-size: 20px;
   width: min-content;
+}
+
+@media only screen and (max-width: 420px) {
+  .App{
+    height: auto;
+  }
+
+  .dashboard{
+    flex-direction: column;
+    margin: auto;
+    position: relative;
+    transform: none;
+    top: 0;
+    left: 0;
+    row-gap: 30px;
+  }
+
+  .card-list{
+    flex-direction: column;
+    width: auto;
+  }
+
+  .user-card ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .profile-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .report-container{
+    flex-direction: column;
+  }
+
+  .profile-container .user-name {
+    font-size: 12px;
+    width: auto;
+  }
+  
+  .duration-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .card-container, .user-card {
+    width: 250px;
+  }
+
+  .card-container .timeframe {
+    transform: translateY(50%);
+  }
 }

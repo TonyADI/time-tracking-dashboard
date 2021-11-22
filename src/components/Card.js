@@ -30,7 +30,7 @@ const Card = props => {
         default:
             imgSrc = work;
     }
-    
+
     return (
         <div className="card-container"
         style={{backgroundColor: props.activity.color}}>
@@ -40,11 +40,13 @@ const Card = props => {
                     <span className="activity-name">{props.activity.title}</span>
                     <img className="ellipsis" alt="ellipsis" src={props.ellipsis}/>
                 </div>
-                <span className="current-duration">
-                    {props.activity.timeframes[props.time].current}hrs</span>
-                <span className="timeframe">{props.time === 'daily' ? 'Yesterday' : 
-                props.time === 'weekly' ? 
-                'Last Week' : 'Last Month'} - {props.activity.timeframes[props.time].previous}hrs</span>
+                <div className="duration-container">
+                    <span className="current-duration">
+                        {props.activity.timeframes[props.time].current}hrs</span>
+                    <span className="timeframe">{props.time === 'daily' ? 'Yesterday' : 
+                    props.time === 'weekly' ? 
+                    'Last Week' : 'Last Month'} - {props.activity.timeframes[props.time].previous}hrs</span>
+                </div>
             </div>
         </div>
     )

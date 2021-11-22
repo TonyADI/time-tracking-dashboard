@@ -5,11 +5,12 @@ const UserCard = props => {
     return (
         <div className="user-card">
             <div className="profile-container">
-                <img className="profile-picture" alt="profile picture" 
+                <img className="profile-picture" alt="account user" 
                 src={props.profilePicture}/>
-                
-                <span className="report">Report for</span>
-                <span className="user-name">Jeremy Robson</span>
+                <div className="report-container">
+                    <span className="report">Report for</span>
+                    <span className="user-name">Jeremy Robson</span>
+                </div>
             </div>
             <ul>
                 <li><button value="daily"

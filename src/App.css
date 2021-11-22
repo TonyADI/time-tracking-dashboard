@@ -170,6 +170,7 @@
   .dashboard{
     flex-direction: column;
     margin: auto;
+    padding: 60px 0;
     position: relative;
     transform: none;
     top: 0;

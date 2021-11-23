@@ -68,14 +68,18 @@
 }
 
 .card .current-duration {
-  padding: 10px 0 5px;
+  animation: drop-down 0.5s forwards;
   font-size: 30px;
   font-weight: 300;
+  padding: 10px 0 5px;
+  transform: translateY(-50px);
 }
 
 .card .timeframe {
+  animation: fade-in 0.5s 0.5s forwards;
   color: hsl(236, 100%, 87%);
   font-size: 10px;
+  opacity: 0;
 }
 
 
@@ -96,6 +100,7 @@
 .duration-container {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .profile-picture {
@@ -216,4 +221,14 @@
   .card-container .timeframe {
     transform: translateY(50%);
   }
+}
+
+@keyframes drop-down {
+  from {transform: translateY(-50px);}
+  to {transform: translateY(0);}
+}
+
+@keyframes fade-in {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }

@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Time tracking dashboard](https://tonyadi.com/apps/frontend-mentor/time-tracking-dashboard)
+- Live Site URL: [Time tracking dashboard](https://tonyadi.com/apps/time-tracking-dashboard)
 
 ## My process
 
